@@ -14,13 +14,13 @@ const methodOverride = require('method-override');
 const passport = require('passport');
 const LocalStrategy = require('passport-local');
 const User = require('./models/user');
-// const dburl=process.env.DB_URL
+ const dburl=process.env.DB_URL
 
 const userRoutes = require('./routes/users');
 const campgroundRoutes = require('./routes/campgrounds');
 const reviewRoutes = require('./routes/reviews');
 
-mongoose.connect('mongodb://localhost:27017/yelp-camp', {
+mongoose.connect(dburl, {
     useNewUrlParser: true,
     useUnifiedTopology: true
 });
